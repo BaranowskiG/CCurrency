@@ -1,5 +1,6 @@
 import UIKit
 
+
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController?
 
@@ -12,9 +13,9 @@ class AppCoordinator: Coordinator {
     func eventOccurred(with type: Event) {
         switch type {
         case .openDetailView:
-            let vc = DetailViewController()
-            vc.coordinator = self
-            navigationController?.pushViewController(vc, animated: true)
+            let detailVC = DetailViewController()
+            detailVC.coordinator = self
+            navigationController?.pushViewController(detailVC, animated: true)
         }
     }
 }
