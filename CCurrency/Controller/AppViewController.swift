@@ -1,15 +1,15 @@
 import UIKit
 
 
-class AppViewController: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+class AppViewController: UIViewController {
+    var coordinator: AppCoordinator?
     var appViewModel = AppViewModel()
-    private let tableView = UITableView(frame: UIScreen.main.bounds, style: .insetGrouped)
+    private let appTableView = UITableView(frame: UIScreen.main.bounds, style: .insetGrouped)
     
     var response = [String:Double]() {
         didSet {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.appTableView.reloadData()
             }
         }
     }
@@ -37,11 +37,11 @@ class AppViewController: UIViewController, Coordinating {
     }
     
     func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
-        tableView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        view.addSubview(tableView)
+        appTableView.dataSource = self
+        appTableView.delegate = self
+        appTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.appTableViewCell)
+        appTableView.frame = CGRect(x: .zero, y: .zero, width: view.frame.width, height: view.frame.height)
+        view.addSubview(appTableView)
     }
 }
 
@@ -52,9 +52,10 @@ extension AppViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
-        let value = String(format:"%.2f" ,Array(response)[indexPath.row].value)
-        let key = Array(response)[indexPath.row].key
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.appTableViewCell, for: indexPath)
+        let sortedResponse = Array(response).sorted(by: <)
+        let value = String(format: "%.2f", sortedResponse[indexPath.row].value)
+        let key = sortedResponse[indexPath.row].key
         cell.textLabel?.text = "\(key)"
         cell.accessoryType = .disclosureIndicator
         let label = UILabel.init(frame: CGRect(x:0,y:0,width:100,height:20))
@@ -66,6 +67,7 @@ extension AppViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.tappedCurrencyName = "\(Array(response).sorted(by: <)[indexPath.row].key)"
         coordinator?.eventOccurred(with: .openDetailView)
     }
 }

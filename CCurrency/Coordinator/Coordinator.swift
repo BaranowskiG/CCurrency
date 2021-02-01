@@ -10,7 +10,3 @@ protocol Coordinator {
     func start()
     func eventOccurred(with type: Event)
 }
-
-protocol Coordinating {
-    var coordinator: Coordinator? {get set}
-}
