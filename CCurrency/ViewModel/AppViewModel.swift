@@ -20,9 +20,5 @@ struct AppViewModel {
             
         }.resume()
     }
-    
-    func getHistory(of: String) {
-        
-    }
 
 }

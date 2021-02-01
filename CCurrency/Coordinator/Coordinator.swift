@@ -11,6 +11,6 @@ protocol Coordinator {
     func eventOccurred(with type: Event)
 }
 
-protocol Coordinating {
-    var coordinator: Coordinator? {get set}
-}
+//protocol Coordinating {
+//    var coordinator: Coordinator? {get set}
+//}

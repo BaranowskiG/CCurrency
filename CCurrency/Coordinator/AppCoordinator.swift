@@ -3,6 +3,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController?
+    var tappedCurrencyName: String?
 
     func start() {
         let appVC = AppViewController()
@@ -15,6 +16,7 @@ class AppCoordinator: Coordinator {
         case .openDetailView:
             let detailVC = DetailViewController()
             detailVC.coordinator = self
+            detailVC.currencyName = tappedCurrencyName
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }
