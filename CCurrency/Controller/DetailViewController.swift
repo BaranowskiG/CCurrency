@@ -6,6 +6,7 @@ class DetailViewController: UIViewController {
     var currencyName: String?
     var detailViewModel = DetailViewModel()
     private let detailTableView = UITableView(frame: UIScreen.main.bounds, style: .insetGrouped)
+    
     var response = [String: [String: Double]]() {
         didSet {
             DispatchQueue.main.async {
@@ -52,7 +53,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let value = sortedResponse[indexPath.row].value["\(currencyName!)"]
         cell.textLabel?.text = "\(key)"
         cell.accessoryType = .disclosureIndicator
-        let label = UILabel.init(frame: CGRect(x:0,y:0,width:100,height:20))
+        let label = UILabel.init(frame: CGRect(x: .zero, y: .zero, width: 100, height: 20))
         label.text = String(format: "%.4f", value!)
         label.textAlignment = .right
         cell.accessoryView = label
