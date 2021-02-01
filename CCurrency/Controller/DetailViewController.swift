@@ -47,7 +47,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.detailTableViewCell, for: indexPath)
-        let sortedResponse = Array(response)
+        let sortedResponse = Array(response).sorted { $0.key > $1.key }
         let key = sortedResponse[indexPath.row].key
         let value = sortedResponse[indexPath.row].value["\(currencyName!)"]
         cell.textLabel?.text = "\(key)"
