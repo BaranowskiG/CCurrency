@@ -4,7 +4,7 @@ import UIKit
 class AppViewController: UIViewController, Coordinating {
     var coordinator: Coordinator?
     var appViewModel = AppViewModel()
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: UIScreen.main.bounds, style: .insetGrouped)
     
     var response = [String:Double]() {
         didSet {
@@ -28,8 +28,6 @@ class AppViewController: UIViewController, Coordinating {
                 print(err)
             }
         }
-        
-        
     }
     
     func setupView() {
@@ -57,8 +55,13 @@ extension AppViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
         let value = String(format:"%.2f" ,Array(response)[indexPath.row].value)
         let key = Array(response)[indexPath.row].key
-        cell.textLabel?.text = "\(key) \(value)"
+        cell.textLabel?.text = "\(key)"
         cell.accessoryType = .disclosureIndicator
+        let label = UILabel.init(frame: CGRect(x:0,y:0,width:100,height:20))
+        label.text = value
+        label.textAlignment = .right
+        cell.accessoryView = label
+
         return cell
     }
     
