@@ -10,6 +10,9 @@
 		977AB95125C72CF60087FD57 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AB95025C72CF60087FD57 /* Coordinator.swift */; };
 		977AB95425C72E590087FD57 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AB95325C72E590087FD57 /* AppCoordinator.swift */; };
 		977AB95825C732F30087FD57 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AB95725C732F30087FD57 /* DetailViewController.swift */; };
+		97D71A7F25C75E440048A27D /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D71A7E25C75E440048A27D /* ExchangeRate.swift */; };
+		97D71A8225C75F360048A27D /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D71A8125C75F360048A27D /* AppViewModel.swift */; };
+		97D71A8825C8150C0048A27D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D71A8725C8150C0048A27D /* Constant.swift */; };
 		97FDB25C25C4B3E7005AEF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FDB25B25C4B3E7005AEF6F /* AppDelegate.swift */; };
 		97FDB25E25C4B3E7005AEF6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FDB25D25C4B3E7005AEF6F /* SceneDelegate.swift */; };
 		97FDB26025C4B3E7005AEF6F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FDB25F25C4B3E7005AEF6F /* AppViewController.swift */; };
@@ -21,6 +24,9 @@
 		977AB95025C72CF60087FD57 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		977AB95325C72E590087FD57 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		977AB95725C732F30087FD57 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		97D71A7E25C75E440048A27D /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		97D71A8125C75F360048A27D /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		97D71A8725C8150C0048A27D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		97FDB25825C4B3E7005AEF6F /* CCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FDB25B25C4B3E7005AEF6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97FDB25D25C4B3E7005AEF6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 		97FDB27125C55877005AEF6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				97D71A7E25C75E440048A27D /* ExchangeRate.swift */,
+				97D71A8725C8150C0048A27D /* Constant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 		97FDB27425C558E8005AEF6F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				97D71A8125C75F360048A27D /* AppViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,11 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				977AB95125C72CF60087FD57 /* Coordinator.swift in Sources */,
+				97D71A7F25C75E440048A27D /* ExchangeRate.swift in Sources */,
 				97FDB26025C4B3E7005AEF6F /* AppViewController.swift in Sources */,
+				97D71A8225C75F360048A27D /* AppViewModel.swift in Sources */,
 				977AB95425C72E590087FD57 /* AppCoordinator.swift in Sources */,
 				977AB95825C732F30087FD57 /* DetailViewController.swift in Sources */,
 				97FDB25C25C4B3E7005AEF6F /* AppDelegate.swift in Sources */,
 				97FDB25E25C4B3E7005AEF6F /* SceneDelegate.swift in Sources */,
+				97D71A8825C8150C0048A27D /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
