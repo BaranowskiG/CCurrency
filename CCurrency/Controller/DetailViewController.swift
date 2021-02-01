@@ -49,13 +49,12 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.appTableViewCell, for: indexPath)
         let sortedResponse = Array(response)
-        print("palokoleo", sortedResponse)
-        let value = String(format: "%.2f", sortedResponse[indexPath.row].value)
         let key = sortedResponse[indexPath.row].key
+        let value = sortedResponse[indexPath.row].value["\(currencyName!)"]
         cell.textLabel?.text = "\(key)"
         cell.accessoryType = .disclosureIndicator
         let label = UILabel.init(frame: CGRect(x:0,y:0,width:100,height:20))
-        label.text = value
+        label.text = String(format: "%.4f", value!)
         label.textAlignment = .right
         cell.accessoryView = label
 
