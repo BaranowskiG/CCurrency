@@ -22,8 +22,20 @@ struct DetailViewModel {
     }
     
     private func getURL() -> String {
-        let startDate = "2019-10-02"
-        let endDate = "2019-10-10" //Date()
+        let now = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let currentDay = calendar.component(.weekday, from: now)
+        let daysDeducted = currentDay == 2 ? -13 : -14
+        let twoWeeksAgo = calendar.date(byAdding: .day, value: daysDeducted, to: now)
+        let dateComponent = DateComponents(calendar: calendar, weekday: 3)
+        let start = calendar.nextDate(after: twoWeeksAgo!, matching: dateComponent, matchingPolicy: .nextTimePreservingSmallerComponents)
+        
+        let startDate = dateFormatter.string(from: start!)
+        let endDate = dateFormatter.string(from: now)
         let symbol = currencyName ?? "PLN"
         return "\(Constant.url)history?start_at=\(startDate)&end_at=\(endDate)&symbols=\(symbol)&base=PLN"
     }

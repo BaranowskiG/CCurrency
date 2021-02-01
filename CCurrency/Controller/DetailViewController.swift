@@ -23,7 +23,6 @@ class DetailViewController: UIViewController {
         detailViewModel.fetchLatestJSON { [weak self] (result) in
             switch result {
             case .success(let exchangeHistory):
-//                print(exchangeHistory)
                 self?.response = exchangeHistory.rates
             case .failure(let err):
                 print(err)
@@ -34,7 +33,7 @@ class DetailViewController: UIViewController {
     func setupTableView() {
         detailTableView.dataSource = self
         detailTableView.delegate = self
-        detailTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.appTableViewCell)
+        detailTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.detailTableViewCell)
         detailTableView.frame = CGRect(x: .zero, y: .zero, width: view.frame.width, height: view.frame.height)
         view.addSubview(detailTableView)
     }
@@ -47,7 +46,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.appTableViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.detailTableViewCell, for: indexPath)
         let sortedResponse = Array(response)
         let key = sortedResponse[indexPath.row].key
         let value = sortedResponse[indexPath.row].value["\(currencyName!)"]
