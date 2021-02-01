@@ -31,6 +31,7 @@
 		97D71A8725C8150C0048A27D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		97D71A8D25C81C210048A27D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		97D71A9025C81C380048A27D /* ExchangeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeHistory.swift; sourceTree = "<group>"; };
+		97D71A9625C85DCE0048A27D /* CCurrency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CCurrency.entitlements; sourceTree = "<group>"; };
 		97FDB25825C4B3E7005AEF6F /* CCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FDB25B25C4B3E7005AEF6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97FDB25D25C4B3E7005AEF6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		97FDB25A25C4B3E7005AEF6F /* CCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				97D71A9625C85DCE0048A27D /* CCurrency.entitlements */,
 				97FDB27525C558EE005AEF6F /* Common */,
 				97FDB27825C57A7E005AEF6F /* Coordinator */,
 				97FDB27225C5587F005AEF6F /* View */,
@@ -354,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CCurrency/CCurrency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA3UK3CGCZ;
 				INFOPLIST_FILE = CCurrency/Info.plist;
@@ -363,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gBaranowski.CCurrency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CCurrency/CCurrency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA3UK3CGCZ;
 				INFOPLIST_FILE = CCurrency/Info.plist;
@@ -382,6 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gBaranowski.CCurrency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
